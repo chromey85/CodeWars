@@ -165,3 +165,29 @@ var countSheep = function (num) {
 
 console.log(countSheep(3));
 console.log(countSheep(5));
+
+// Even or Odd
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+  if (number % 2 === 0) {
+    // % means look at the value of the remainder or the number after the decimal place
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+
+console.log(even_or_odd(2));
+console.log(even_or_odd(5));
+console.log(even_or_odd(-13));
+
+// The highest profit wins!
+// Write a function that returns both the minimum and maximum number of the given list/array.
+
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
+}
+
+console.log(minMax([1, 2, 3, 4, 6, 7, 8]));
+console.log(minMax([-5, -4, -3, -2, -1, 0, 1, 2]));
