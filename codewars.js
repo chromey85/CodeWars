@@ -191,3 +191,23 @@ function minMax(arr) {
 
 console.log(minMax([1, 2, 3, 4, 6, 7, 8]));
 console.log(minMax([-5, -4, -3, -2, -1, 0, 1, 2]));
+
+// Isograms
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+function isIsogram(str) {
+  // if (str.length === 0) {
+  //   return true;
+  // } else {
+  //   let strArr = str.toLowerCase().split("");
+  //   let unique = [...new Set(strArr)];
+  //   return unique.length === strArr.length;
+  // }
+  return new Set(str.toLowerCase().split("")).size === str.length;
+}
+
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("isogram"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("moOse"));
+console.log(isIsogram(""));
