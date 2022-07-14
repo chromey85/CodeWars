@@ -211,3 +211,27 @@ console.log(isIsogram("isogram"));
 console.log(isIsogram("aba"));
 console.log(isIsogram("moOse"));
 console.log(isIsogram(""));
+
+// Grasshopper - Grade book
+// Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+
+function getGrade(s1, s2, s3) {
+  let ave = (s1 + s2 + s3) / 3;
+  if (ave >= 90) {
+    return "A";
+  } else if (ave >= 80 && ave < 90) {
+    return "B";
+  } else if (ave >= 70 && ave < 80) {
+    return "C";
+  } else if (ave >= 60 && ave < 70) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+
+console.log(getGrade(95, 90, 93));
+console.log(getGrade(84, 79, 85));
+console.log(getGrade(75, 70, 79));
+console.log(getGrade(66, 62, 68));
+console.log(getGrade(48, 55, 52));
