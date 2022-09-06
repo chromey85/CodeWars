@@ -252,3 +252,25 @@ function nbYear(p0, percent, aug, p) {
 // console.log(nbYear(1500, 5, 100, 5000));
 // console.log(nbYear(1500000, 2.5, 10000, 2000000));
 console.log(nbYear(1000, 2, 50, 1214));
+
+// Return the number (count) of vowels in the given string.
+
+function getCount(str) {
+  let str1 = str.match(/[aeiou]/g);
+  return str1?.length || 0;
+}
+
+console.log(`There are ${getCount("abracadabra")} vowels`);
+console.log(`There are ${getCount("pear tree")} vowels`);
+console.log(
+  `There are ${getCount("o a kak ushakov lil vo kashu kakao")} vowels`
+);
+console.log(`There are ${getCount("my pyx")} vowels`);
+
+// MakeUpperCase
+
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+
+console.log(`Stop shouting ${makeUpperCase("hello")}`);
