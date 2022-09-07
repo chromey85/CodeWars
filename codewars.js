@@ -283,3 +283,26 @@ function stringToArray(string) {
 
 console.log(stringToArray("Robin Singh"));
 console.log(stringToArray("I love arrays they are my favorite"));
+
+// Thinkful - Logic Drills: Traffic light
+
+function updateLight(current) {
+  let lights = ["Red", "Yellow", "Green"];
+  // return lights.indexOf(current)
+  //   ? "That colour is not part of the traffic lights"
+  //   : lights.indexOf(current) === lights.length - 1
+  //   ? lights[lights.indexOf(current) - 1]
+  //   : lights[lights.indexOf(current) + 1];
+  if (current == "Red") {
+    return "Yellow";
+  } else if (current == "Yellow") return "Green";
+  else if (current == "Green") return "Yellow";
+  else {
+    return "That colour is not part of the traffic lights";
+  }
+}
+
+console.log(updateLight("Red"));
+console.log(updateLight("Yellow"));
+console.log(updateLight("Green"));
+console.log(updateLight("Purple"));
