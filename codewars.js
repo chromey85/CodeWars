@@ -274,3 +274,12 @@ function makeUpperCase(str) {
 }
 
 console.log(`Stop shouting ${makeUpperCase("hello")}`);
+
+// Convert a string to an array
+
+function stringToArray(string) {
+  return string.split(" ");
+}
+
+console.log(stringToArray("Robin Singh"));
+console.log(stringToArray("I love arrays they are my favorite"));
