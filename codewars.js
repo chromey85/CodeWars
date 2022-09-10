@@ -336,3 +336,48 @@ console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
 console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
 console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]));
 console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
+
+// Number of People in the Bus
+
+var number = function (busStops) {
+  let pass = busStops.flat();
+  for (let i = 0; i < pass.length; i++) {
+    pass = +i - i;
+  }
+};
+
+var number = function (busStops) {
+  for (let i = 0; i < busStops.length; i++) {
+    return busStops[i][0] - busStops[i][1];
+  }
+};
+// return busStops[0][0];
+
+console.log(
+  number([
+    [10, 0],
+    [3, 5],
+    [5, 8],
+  ])
+);
+console.log(
+  number([
+    [3, 0],
+    [9, 1],
+    [4, 10],
+    [12, 2],
+    [6, 1],
+    [7, 10],
+  ])
+);
+console.log(
+  number([
+    [3, 0],
+    [9, 1],
+    [4, 8],
+    [12, 2],
+    [6, 1],
+    [7, 8],
+  ])
+);
+console.log(number([[0, 0]]));
