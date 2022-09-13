@@ -339,19 +339,28 @@ console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
 
 // Number of People in the Bus
 
-var number = function (busStops) {
-  let pass = busStops.flat();
-  for (let i = 0; i < pass.length; i++) {
-    pass = +i - i;
-  }
-};
+// // Solution 1
+// var number = function (busStops) {
+//   let newBusStops = [];
+//   for (let i = 0; i < busStops.length; i++) {
+//     newBusStops = newBusStops.concat(busStops[i]);
+//   }
+//   //   return newBusStops;
+//   let passengers = 0;
+//   for (let i = 0; i < newBusStops.length; i++) {
+//     i % 2 ? (passengers -= newBusStops[i]) : (passengers += newBusStops[i]);
+//   }
+//   return passengers;
+// };
 
+// // Solution 2
 var number = function (busStops) {
+  let passengers = 0;
   for (let i = 0; i < busStops.length; i++) {
-    return busStops[i][0] - busStops[i][1];
+    passengers += busStops[i][0] - busStops[i][1];
   }
+  return passengers;
 };
-// return busStops[0][0];
 
 console.log(
   number([
