@@ -354,13 +354,18 @@ console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
 // };
 
 // // Solution 2
-var number = function (busStops) {
-  let passengers = 0;
-  for (let i = 0; i < busStops.length; i++) {
-    passengers += busStops[i][0] - busStops[i][1];
-  }
-  return passengers;
-};
+// var number = function (busStops) {
+//   let passengers = 0;
+//   for (let i = 0; i < busStops.length; i++) {
+//     passengers += busStops[i][0] - busStops[i][1];
+//   }
+//   return passengers;
+// };
+
+function number(busStops) {
+  let subs = busStops.map((stop) => stop[0] - stop[1]);
+  return subs.reduce((acc, elem) => acc + elem, 0);
+}
 
 console.log(
   number([
