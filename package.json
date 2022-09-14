@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "stream-json": "^1.7.4"
+  },
+  "type": "module"
+}

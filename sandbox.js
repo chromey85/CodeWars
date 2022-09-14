@@ -1,4 +1,10 @@
-const content = await fs.readFile("./data.json");
+// const fs = require("./data.json");
+
+import { readFileSync } from "fs";
+
+let content = readFileSync("./data.json");
+
+let jsoned = JSON.parse(content);
 
 // var number = function (busStops) {
 //   let newBusStops = [];
@@ -21,13 +27,13 @@ const content = await fs.readFile("./data.json");
 //   }
 // };
 
-// var number = function (busStops) {
-//   let passengers = 0;
-//   for (let i = 0; i < busStops.length; i++) {
-//     passengers += busStops[i][0] - busStops[i][1];
-//   }
-//   return passengers;
-// };
+var number = function (busStops) {
+  let passengers = 0;
+  for (let i = 0; i < busStops.length; i++) {
+    passengers += busStops[i][0] - busStops[i][1];
+  }
+  return passengers;
+};
 
 // fs = require(`fs`);
 // fs.readFile(`./data.json`, (`err`, data));
@@ -46,12 +52,12 @@ const content = await fs.readFile("./data.json");
 //     console.log(data);
 //   });
 
-function number(busStops) {
-  let subs = busStops.map((stop) => stop[0] - stop[1]);
-  return subs.reduce((acc, elem) => acc + elem, 0);
-}
+// function number(busStops) {
+//   let subs = busStops.map((stop) => stop[0] - stop[1]);
+//   return subs.reduce((acc, elem) => acc + elem, 0);
+// }
 
-console.log(number(JSON.parse(content)));
+console.log(number(jsoned));
 
 // console.log(
 //   number([

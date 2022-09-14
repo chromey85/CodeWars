@@ -56,7 +56,7 @@ console.log(findNeedle(haystack));
 let name = "Yusuf";
 let owner = "Yusuf";
 
-function greet(name, owner) {
+function greet1(name, owner) {
   if (name == owner) {
     return "Hello Boss";
   } else {
@@ -64,7 +64,7 @@ function greet(name, owner) {
   }
 }
 
-console.log(greet(name, owner));
+console.log(greet1(name, owner));
 
 // Remove String Spaces
 // Create a function that takes a string and returns the string without spaces.
@@ -339,19 +339,25 @@ console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
 
 // Number of People in the Bus
 
+import { readFileSync } from "fs";
+
+let content = readFileSync("./data.json");
+
+let jsoned = JSON.parse(content);
+
 // // Solution 1
-// var number = function (busStops) {
-//   let newBusStops = [];
-//   for (let i = 0; i < busStops.length; i++) {
-//     newBusStops = newBusStops.concat(busStops[i]);
-//   }
-//   //   return newBusStops;
-//   let passengers = 0;
-//   for (let i = 0; i < newBusStops.length; i++) {
-//     i % 2 ? (passengers -= newBusStops[i]) : (passengers += newBusStops[i]);
-//   }
-//   return passengers;
-// };
+var number = function (busStops) {
+  let newBusStops = [];
+  for (let i = 0; i < busStops.length; i++) {
+    newBusStops = newBusStops.concat(busStops[i]);
+  }
+  //   return newBusStops;
+  let passengers = 0;
+  for (let i = 0; i < newBusStops.length; i++) {
+    i % 2 ? (passengers -= newBusStops[i]) : (passengers += newBusStops[i]);
+  }
+  return passengers;
+};
 
 // // Solution 2
 // var number = function (busStops) {
@@ -362,10 +368,12 @@ console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
 //   return passengers;
 // };
 
-function number(busStops) {
-  let subs = busStops.map((stop) => stop[0] - stop[1]);
-  return subs.reduce((acc, elem) => acc + elem, 0);
-}
+// function number(busStops) {
+//   let subs = busStops.map((stop) => stop[0] - stop[1]);
+//   return subs.reduce((acc, elem) => acc + elem, 0);
+// }
+
+console.log(number(jsoned));
 
 console.log(
   number([
