@@ -340,40 +340,41 @@ console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
 // Number of People in the Bus
 
 import { readFileSync } from "fs";
+import { parse } from "path";
 
 let content = readFileSync("./data.json");
 
 let jsoned = JSON.parse(content);
 
 // // Solution 1
-var number = function (busStops) {
-  let newBusStops = [];
-  for (let i = 0; i < busStops.length; i++) {
-    newBusStops = newBusStops.concat(busStops[i]);
-  }
-  //   return newBusStops;
-  let passengers = 0;
-  for (let i = 0; i < newBusStops.length; i++) {
-    i % 2 ? (passengers -= newBusStops[i]) : (passengers += newBusStops[i]);
-  }
-  return passengers;
-};
-
-// // Solution 2
 // var number = function (busStops) {
-//   let passengers = 0;
+//   let newBusStops = [];
 //   for (let i = 0; i < busStops.length; i++) {
-//     passengers += busStops[i][0] - busStops[i][1];
+//     newBusStops = newBusStops.concat(busStops[i]);
+//   }
+//   //   return newBusStops;
+//   let passengers = 0;
+//   for (let i = 0; i < newBusStops.length; i++) {
+//     i % 2 ? (passengers -= newBusStops[i]) : (passengers += newBusStops[i]);
 //   }
 //   return passengers;
 // };
+
+// Solution 2
+var number = function (busStops) {
+  let passengers = 0;
+  for (let i = 0; i < busStops.length; i++) {
+    passengers += busStops[i][0] - busStops[i][1];
+  }
+  return passengers;
+};
 
 // function number(busStops) {
 //   let subs = busStops.map((stop) => stop[0] - stop[1]);
 //   return subs.reduce((acc, elem) => acc + elem, 0);
 // }
 
-console.log(number(jsoned));
+console.log(number(jsoned)); // used for importing data from json file
 
 console.log(
   number([
@@ -403,3 +404,26 @@ console.log(
   ])
 );
 console.log(number([[0, 0]]));
+
+// Basic Mathematical Operations
+
+function basicOp(operation, value1, value2) {
+  return eval(value1 + operation + value2);
+}
+
+console.log(basicOp("+", 4, 7));
+console.log(basicOp("-", 15, 18));
+console.log(basicOp("*", 5, 5));
+console.log(basicOp("/", 49, 7));
+
+// Remove exclamation marks
+
+function removeExclamationMarks(s) {
+  return (s = s.split("!").join(``));
+}
+
+console.log(removeExclamationMarks("Hello World!"));
+console.log(removeExclamationMarks("Hello World!!"));
+console.log(
+  removeExclamationMarks("vjmJQXtykQ!FSVfPDmlkQ xAbxfRBZdx!qIIDBgsUuK")
+);
