@@ -444,3 +444,20 @@ console.log(lovefunc(0, 1));
 console.log(lovefunc(0, 0));
 console.log(lovefunc(957, 613));
 console.log(lovefunc(7, 3));
+
+// Grasshopper - Summation
+
+var summation = function (num) {
+  let arr = [];
+  let start = 0;
+  while (start < num + 1) {
+    arr.push(start++);
+  }
+  let sum = arr.reduce(function (a, b) {
+    return a + b;
+  }, 0);
+  return sum;
+};
+
+console.log(summation(1));
+console.log(summation(8));
