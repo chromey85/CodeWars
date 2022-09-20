@@ -490,24 +490,23 @@ console.log(smash(["this", "is", "a", "really", "long", "sentence"]));
 // Complementary DNA
 
 function DNAStrand(dna) {
-  // dna = dna.split("");
-  // for (let i = 0; i < dna.length; i++) {
-  //   dna[i] === "A"
-  //     ? (dna[i] = "T")
-  //     : dna[i] === "T"
-  //     ? (dna[i] = "A")
-  //     : dna[i] === "C"
-  //     ? (dna[i] = "G")
-  //     : dna[i] === "G"
-  //     ? (dna[i] = "C")
-  //     : "There is no DNA";
-  // }
-  // return dna.join("");
+  dna = dna.split("");
+  for (let i = 0; i < dna.length; i++) {
+    dna[i] === "A"
+      ? (dna[i] = "T")
+      : dna[i] === "T"
+      ? (dna[i] = "A")
+      : dna[i] === "C"
+      ? (dna[i] = "G")
+      : dna[i] === "G"
+      ? (dna[i] = "C")
+      : "There is no DNA";
+  }
+  return dna.join("");
   //     .replace("A", "T")
   //     .replace("T", "A")
   //     .replace("C", "G")
   //     .replace("G", "C");
-  return dna.split("").map(getLetter).join("");
 }
 
 console.log(DNAStrand("AAAA"));
