@@ -28,6 +28,19 @@ function DNAtoRNA(dna) {
   return dna.replace(/T/g, "U");
 }
 
+console.log(DNAtoRNA("TTTT"));
+console.log(DNAtoRNA("GCAT"));
+console.log(DNAtoRNA("GACCGCCGCC"));
+console.log(DNAtoRNA("GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC"));
+console.log(DNAtoRNA("CACGACATACGGAGCAGCGCACGGTTAGTACAGCTGTCGGTGAACTCCATGACA"));
+console.log(DNAtoRNA("CACGACATACGGAGCAGCGCACGGTTAGTACAGCTGTCGGTGAACTCCATGACA"));
+console.log(DNAtoRNA("AACCCTGTCCACCAGTAACGTAGGCCGACGGGAAAAATAAACGATCTGTCAATG"));
+console.log(
+  DNAtoRNA(
+    "GAAGCTTATCCGTTCCTGAAGGCTGTGGCATCCTCTAAATCAGACTTGGCTACGCCGTTAGCCGAGGGCTTAGCGTTGAGTGTCATTATATACGCGGCCTGCGACCTGGCCACACAATGCCCTCGAAAATTTTTCTTTCGGTTATACGAGTTGCGAAACCTTTCGCGCGTAGACGAAGAATTTGAAGTGGCCTACACCGTTTGGAAAGCCGTTCTCATTAGAATGGTACCGACTACTCGGCTCGGAGTCATTGTATAGGGAGAGTGTCGTATCAACATCACACACTTTTAGCATTTAAGGTCCATGGCCGTTGACAGGTACCGA"
+  )
+);
+
 //A Needle in the Haystack
 // Create a function that takes a string and returns the number of times the word "needle" appears in the string.
 
@@ -461,3 +474,42 @@ var summation = function (num) {
 
 console.log(summation(1));
 console.log(summation(8));
+
+// Sentence Smash
+
+function smash(words) {
+  return words.length == 0 ? "" : words.toString().split(",").join(" ");
+}
+
+console.log(smash([]));
+console.log(smash(["hello"]));
+console.log(smash(["hello", "world"]));
+console.log(smash(["hello", "amazing", "world"]));
+console.log(smash(["this", "is", "a", "really", "long", "sentence"]));
+
+// Complementary DNA
+
+function DNAStrand(dna) {
+  // dna = dna.split("");
+  // for (let i = 0; i < dna.length; i++) {
+  //   dna[i] === "A"
+  //     ? (dna[i] = "T")
+  //     : dna[i] === "T"
+  //     ? (dna[i] = "A")
+  //     : dna[i] === "C"
+  //     ? (dna[i] = "G")
+  //     : dna[i] === "G"
+  //     ? (dna[i] = "C")
+  //     : "There is no DNA";
+  // }
+  // return dna.join("");
+  //     .replace("A", "T")
+  //     .replace("T", "A")
+  //     .replace("C", "G")
+  //     .replace("G", "C");
+  return dna.split("").map(getLetter).join("");
+}
+
+console.log(DNAStrand("AAAA"));
+console.log(DNAStrand("ATTGC"));
+console.log(DNAStrand("GTAT"));
