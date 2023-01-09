@@ -512,3 +512,19 @@ function DNAStrand(dna) {
 console.log(DNAStrand("AAAA"));
 console.log(DNAStrand("ATTGC"));
 console.log(DNAStrand("GTAT"));
+
+// Remove the minimum
+
+function removeSmallest(numbers) {
+  let min = Math.min(...numbers);
+  // return numbers.pop(Math.min(...numbers));
+  // let newNum = numbers.filter(min);
+  // return newNum;
+  let minIndex = numbers.indexOf(min);
+  return numbers.filter((_, i) => i !== minIndex);
+}
+
+console.log(removeSmallest([1, 2, 3, 4, 5]));
+console.log(removeSmallest([5, 3, 2, 1, 4]));
+console.log(removeSmallest([2, 2, 1, 2, 1]));
+console.log(removeSmallest([]));
