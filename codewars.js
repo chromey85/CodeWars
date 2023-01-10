@@ -528,3 +528,41 @@ console.log(removeSmallest([1, 2, 3, 4, 5]));
 console.log(removeSmallest([5, 3, 2, 1, 4]));
 console.log(removeSmallest([2, 2, 1, 2, 1]));
 console.log(removeSmallest([]));
+
+// Money, Money, Money
+
+function calculateYears(principal, interest, tax, desired) {
+  // let earnedInterest = principal * interest;
+  // console.log(`earnedInterest = ${earnedInterest}`);
+  // let taxed = earnedInterest * tax;
+  // console.log(`taxed = ${taxed}`);
+  // let year = earnedInterest - taxed + principal;
+  // console.log(`year = ${year}`);
+  // let arr = [year];
+  // console.log(`arr = ${arr}`);
+
+  // let year1 = principal * interest - principal * interest * tax + principal;
+  // console.log(`year1 = ${year1}`);
+  // let arr = [year1];
+  // console.log(`arr = ${arr}`);
+
+  // if ((year1 = desired)) {
+  //   return 0;
+  // } else if (year1 >= desired) {
+  //   for (let i = 0; i <= year1; i++) {
+  //     arr.push(year1 * interest - principal * interest * tax + principal);
+  //   }
+  // } else {
+  //   return arr.length;
+  // }
+  let year = 0;
+  while (principal < desired) {
+    year++;
+    principal = principal + (principal * interest - principal * interest * tax);
+  }
+  return year;
+}
+
+console.log(calculateYears(1000, 0.05, 0.18, 1100));
+console.log(calculateYears(1000, 0.01625, 0.18, 1200));
+console.log(calculateYears(1000, 0.05, 0.18, 1000));
